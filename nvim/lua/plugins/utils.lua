@@ -18,13 +18,15 @@ return {
     end,
     dependencies = {
       { "nvim-lua/plenary.nvim" },
-      { "nvim-telescope/telescope.nvim", tag = "0.1.4" },
+      { "nvim-telescope/telescope.nvim", tag = "0.1.4", opts = {
+        defaults = { previewer = true },
+      } },
       { "Shatur/neovim-session-manager" },
     },
     lazy = false,
     priority = 100,
     keys = {
-      { "<leader>fp", "<cmd>Telescope neovim-project discover<cr>", desc = "Find project" },
+      { "<leader>fp", "<cmd>NeovimProjectDiscover<cr>", desc = "Find project" },
     },
   },
   -- {
@@ -129,7 +131,16 @@ return {
               padding = 1,
             },
             {
-              action = ":Telescope neovim-project discover",
+              action = function()
+                Snacks.picker("projects", {
+                  dev = {
+                    "~/work/",
+                    "~/.config/",
+                    "~/remote/",
+                  },
+                  patterns = { "*" },
+                })
+              end,
               desc = " Find project",
               icon = "󱉭 ",
               key = "p",

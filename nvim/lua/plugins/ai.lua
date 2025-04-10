@@ -1,0 +1,73 @@
+return {
+  -- {
+  --   "olimorris/codecompanion.nvim",
+  --   opts = {
+  --     strategies = {
+  --       chat = {
+  --         adapter = "anthropic",
+  --       },
+  --       inline = {
+  --         adapter = "anthropic",
+  --       },
+  --     },
+  --   },
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-treesitter/nvim-treesitter",
+  --     {
+  --       "saghen/blink.cmp",
+  --       optional = true,
+  --       opts = {
+  --         sources = {
+  --           per_filetype = {
+  --             codecompanion = { "codecompanion" },
+  --           },
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "ravitemer/mcphub.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim", -- Required for Job and HTTP requests
+  --     {
+  --       "olimorris/codecompanion.nvim",
+  --       opts = {
+  --         strategies = {
+  --           chat = {
+  --             tools = {
+  --               ["mcp"] = {
+  --                 -- Prevent mcphub from loading before needed
+  --                 callback = function()
+  --                   return require("mcphub.extensions.codecompanion")
+  --                 end,
+  --                 description = "Call tools and resources from the MCP Servers",
+  --               },
+  --             },
+  --           },
+  --         },
+  --       },
+  --     },
+  --   },
+  --   -- comment the following line to ensure hub will be ready at the earliest
+  --   cmd = "MCPHub", -- lazy load by default
+  --   build = "npm install -g mcp-hub@latest", -- Installs required mcp-hub npm module
+  --   -- uncomment this if you don't want mcp-hub to be available globally or can't use -g
+  --   -- build = "bundled_build.lua",  -- Use this and set use_bundled_binary = true in opts  (see Advanced configuration)
+  --   config = function()
+  --     require("mcphub").setup({
+  --       extensions = {
+  --         codecompanion = {
+  --           -- Show the mcp tool result in the chat buffer
+  --           show_result_in_chat = true,
+  --           -- Make chat #variables from MCP server resources
+  --           make_vars = true,
+  --           -- Create slash commands for prompts
+  --           make_slash_commands = true,
+  --         },
+  --       },
+  --     })
+  --   end,
+  -- },
+}

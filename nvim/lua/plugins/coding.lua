@@ -490,11 +490,6 @@ return {
   -- navbuddy and navic
   {
     "SmiteshP/nvim-navic",
-    dependencies = {
-      {
-        "LazyVim/LazyVim",
-      },
-    },
     lazy = true,
     init = function()
       require("lazyvim.config")
@@ -551,55 +546,4 @@ return {
     },
     opts = { lsp = { auto_attach = true } },
   },
-  -- {
-  --   "olimorris/codecompanion.nvim",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-treesitter/nvim-treesitter",
-  --     {
-  --       "stevearc/dressing.nvim", -- Optional: Improves the default Neovim UI
-  --       opts = {},
-  --     },
-  --     "nvim-telescope/telescope.nvim", -- Optional: For using slash commands
-  --     { "MeanderingProgrammer/render-markdown.nvim", ft = { "markdown", "codecompanion" } },
-  --     {
-  --       "Saghen/blink.cmp",
-  --       opts = {
-  --         sources = {
-  --           default = { "codecompanion" },
-  --           providers = {
-  --             codecompanion = {
-  --               name = "CodeCompanion",
-  --               module = "codecompanion.providers.completion.blink",
-  --               enabled = true,
-  --             },
-  --           },
-  --         },
-  --       },
-  --     },
-  --   },
-  --   config = function()
-  --     require("codecompanion").setup({
-  --       strategies = {
-  --         chat = {
-  --           adapter = "anthropic",
-  --         },
-  --         inline = {
-  --           adapter = "anthropic",
-  --         },
-  --         agent = {
-  --           adapter = "anthropic",
-  --         },
-  --       },
-  --     })
-  --     vim.api.nvim_set_keymap("n", "<leader>aa", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-  --     vim.api.nvim_set_keymap("v", "<leader>aa", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-  --     vim.api.nvim_set_keymap("n", "<leader>at", "<cmd>CodeCompanionToggle<cr>", { noremap = true, silent = true })
-  --     vim.api.nvim_set_keymap("v", "<leader>at", "<cmd>CodeCompanionToggle<cr>", { noremap = true, silent = true })
-  --     vim.api.nvim_set_keymap("v", "ga", "<cmd>CodeCompanionAdd<cr>", { noremap = true, silent = true })
-  --
-  --     -- Expand 'cc' into 'CodeCompanion' in the command line
-  --     vim.cmd([[cab cc CodeCompanion]])
-  --   end,
-  -- },
 }

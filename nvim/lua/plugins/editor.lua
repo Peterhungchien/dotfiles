@@ -1,4 +1,5 @@
 return {
+
   {
     "lewis6991/gitsigns.nvim",
     opts = {
@@ -58,7 +59,7 @@ return {
   -- search and replace in multiple files
   {
     "MagicDuck/grug-far.nvim",
-    opts = { headerMaxWidth = 80, searchOnInsertLeave = true },
+    opts = { headerMaxWidth = 80 },
     cmd = "GrugFar",
     keys = {
       {
@@ -66,7 +67,7 @@ return {
         function()
           local grug = require("grug-far")
           local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
-          grug.grug_far({
+          grug.open({
             transient = true,
             prefills = {
               filesFilter = ext and ext ~= "" and "*." .. ext or nil,
@@ -106,7 +107,7 @@ return {
   },
   {
     "echasnovski/mini.surround",
-    dependencies = { "LazyVim/LazyVim" },
+    -- dependencies = { "LazyVim/LazyVim" },
     recommended = true,
     keys = function(_, keys)
       -- Populate the keys based on the user's options
