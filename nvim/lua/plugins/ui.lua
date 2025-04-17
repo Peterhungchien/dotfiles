@@ -225,14 +225,6 @@ return {
             },
             { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
             { LazyVim.lualine.pretty_path() },
-            -- {
-            --   function()
-            --     return require("nvim-navic").get_location()
-            --   end,
-            --   cond = function()
-            --     return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
-            --   end,
-            -- },
           },
           lualine_x = {
             Snacks.profiler.status(),

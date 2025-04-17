@@ -161,7 +161,9 @@ return {
               padding = 1,
             },
             {
-              action = ":cd ~/.config/nvim | Telescope find_files",
+              action = function()
+                Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
+              end,
               desc = " Config",
               icon = " ",
               key = "c",
@@ -330,5 +332,26 @@ return {
         end,
       })
     end,
+  },
+  -- scratch buffer
+  {
+    "folke/snacks.nvim",
+    keys = {
+      {
+        "<leader>.",
+        function()
+          Snacks.scratch()
+        end,
+        desc = "Toggle Scratch Buffer",
+      },
+      {
+        "<leader>S",
+        function()
+          Snacks.scratch.select()
+        end,
+        desc = "Select Scratch Buffer",
+      },
+    },
+    opts = { scratch = { ft = "markdown" } },
   },
 }
